@@ -49,7 +49,7 @@ function gatherCheckInfo(aggregateStatus: Record<string, unknown>, currentStatus
   return { ...aggregateStatus, [currentStatus.name]: { status: currentStatus.status, details: currentStatus.message } }
 }
 
-const apiChecks = []
+const apiChecks = [() => ({ name: 'test', status: 'ok', message: 'ok' })]
 
 export default function healthCheck(
   applicationInfo: ApplicationInfo,
